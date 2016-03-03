@@ -1,0 +1,158 @@
+{
+  "sbg:project": "mmattioni/platypus",
+  "sbg:contributors": [
+    "mmattioni"
+  ],
+  "hints": [
+    {
+      "value": 1,
+      "class": "sbg:CPURequirement"
+    },
+    {
+      "value": 1000,
+      "class": "sbg:MemRequirement"
+    },
+    {
+      "dockerPull": "mattions/platypus:dockerizeit",
+      "class": "DockerRequirement",
+      "dockerImageId": ""
+    }
+  ],
+  "class": "CommandLineTool",
+  "sbg:sbgMaintained": false,
+  "temporaryFailCodes": [],
+  "sbg:createdOn": 1457012609,
+  "sbg:revision": 7,
+  "sbg:latestRevision": 7,
+  "sbg:job": {
+    "allocatedResources": {
+      "mem": 1000,
+      "cpu": 1
+    },
+    "inputs": {
+      "bam": {
+        "size": 0,
+        "path": "/path/to/bam.ext",
+        "secondaryFiles": [],
+        "class": "File"
+      },
+      "reference_genome": {
+        "size": 0,
+        "path": "/path/to/reference_genome.ext",
+        "secondaryFiles": [],
+        "class": "File"
+      }
+    }
+  },
+  "description": "",
+  "baseCommand": [
+    "python",
+    "/code/Platypus/bin/Platypus.py",
+    "callVariants"
+  ],
+  "successCodes": [],
+  "sbg:modifiedOn": 1457015197,
+  "sbg:cmdPreview": "python /code/Platypus/bin/Platypus.py callVariants --bamFiles=/path/to/bam.ext --refFile=/path/to/reference_genome.ext --output=platypus.vcf",
+  "arguments": [
+    {
+      "separate": false,
+      "valueFrom": "platypus.vcf",
+      "prefix": "--output=",
+      "position": 2
+    }
+  ],
+  "label": "platypus",
+  "sbg:createdBy": "mmattioni",
+  "sbg:validationErrors": [],
+  "sbg:id": "mmattioni/platypus/platypus/7",
+  "inputs": [
+    {
+      "type": [
+        "File"
+      ],
+      "inputBinding": {
+        "separate": false,
+        "prefix": "--bamFiles=",
+        "sbg:cmdInclude": true,
+        "secondaryFiles": [
+          "*.bai"
+        ],
+        "position": 0
+      },
+      "id": "#bam"
+    },
+    {
+      "type": [
+        "File"
+      ],
+      "inputBinding": {
+        "separate": false,
+        "prefix": "--refFile=",
+        "sbg:cmdInclude": true,
+        "secondaryFiles": [
+          "*.fai"
+        ],
+        "position": 1
+      },
+      "id": "#reference_genome"
+    }
+  ],
+  "requirements": [],
+  "stdout": "",
+  "sbg:modifiedBy": "mmattioni",
+  "sbg:revisionsInfo": [
+    {
+      "sbg:revision": 7,
+      "sbg:modifiedOn": 1457015197,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 1,
+      "sbg:modifiedOn": 1457013539,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 5,
+      "sbg:modifiedOn": 1457013909,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 6,
+      "sbg:modifiedOn": 1457014113,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 0,
+      "sbg:modifiedOn": 1457012609,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 2,
+      "sbg:modifiedOn": 1457013579,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 3,
+      "sbg:modifiedOn": 1457013743,
+      "sbg:modifiedBy": "mmattioni"
+    },
+    {
+      "sbg:revision": 4,
+      "sbg:modifiedOn": 1457013805,
+      "sbg:modifiedBy": "mmattioni"
+    }
+  ],
+  "id": "https://api.sbgenomics.com/v2/apps/mmattioni/platypus/platypus/7/raw/",
+  "stdin": "",
+  "outputs": [
+    {
+      "type": [
+        "File"
+      ],
+      "id": "#output",
+      "outputBinding": {
+        "glob": "platypus.vcf"
+      }
+    }
+  ]
+}
